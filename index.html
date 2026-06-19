@@ -105,11 +105,15 @@
       color: #2563eb;
       font-weight: 600;
       transition: all 0.25s;
-      cursor: default;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .btn-outline i {
-      margin-right: 6px;
+      margin-right: 4px;
     }
 
     .btn-outline:hover {
@@ -182,7 +186,7 @@
       font-size: 1rem;
       box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
       transition: transform 0.2s, box-shadow 0.2s;
-      cursor: default;
+      cursor: pointer;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
@@ -206,7 +210,7 @@
       border-radius: 60px;
       font-weight: 500;
       transition: 0.2s;
-      cursor: default;
+      cursor: pointer;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
@@ -367,7 +371,7 @@
       text-decoration: none;
       border-bottom: 2px solid transparent;
       transition: 0.2s;
-      cursor: default;
+      cursor: pointer;
     }
 
     .project-link i {
@@ -437,6 +441,17 @@
       font-weight: 500;
     }
 
+    .contact-item a {
+      color: #1f3a57;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .contact-item a:hover {
+      color: #2563eb;
+    }
+
     .social-links {
       display: flex;
       gap: 1.2rem;
@@ -457,7 +472,7 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.02);
       border: 1px solid #dbe4ee;
       text-decoration: none;
-      cursor: default;
+      cursor: pointer;
     }
 
     .social-links a:hover {
@@ -465,6 +480,43 @@
       color: white;
       border-color: #2563eb;
       transform: translateY(-4px);
+    }
+
+    /* Botão do currículo (Google Docs) */
+    .btn-curriculo {
+      background: #ffffff;
+      color: #1e2f44;
+      border: 2px solid #2563eb;
+      padding: 0.8rem 1.8rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.25s;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+
+    .btn-curriculo i {
+      color: #2563eb;
+      font-size: 1.2rem;
+      transition: color 0.25s;
+    }
+
+    .btn-curriculo:hover {
+      background: #2563eb;
+      color: white;
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .btn-curriculo:hover i {
+      color: white;
     }
 
     /* ----- FOOTER ----- */
@@ -515,7 +567,7 @@
       .container {
         padding: 0 1.2rem;
       }
-      .btn-primary, .btn-ghost {
+      .btn-primary, .btn-ghost, .btn-curriculo {
         width: 100%;
         justify-content: center;
       }
@@ -534,7 +586,7 @@
         <li><a href="#">Projetos</a></li>
         <li><a href="#">Skills</a></li>
         <li><a href="#">Contato</a></li>
-        <li><a class="btn-outline" style="cursor:default;"><i class="fas fa-paper-plane"></i> Hire</a></li>
+        <li><a class="btn-outline" href="#contato"><i class="fas fa-paper-plane"></i> Hire</a></li>
       </ul>
     </div>
   </nav>
@@ -547,8 +599,8 @@
         <h1>Construindo o <span>futuro</span> com código.</h1>
         <p>Desenvolvedor full-stack com foco em experiências fluidas, design system e arquitetura escalável.</p>
         <div class="hero-actions">
-          <a class="btn-primary" style="cursor:default;"><i class="fas fa-arrow-right"></i> Ver portfólio</a>
-          <a class="btn-ghost" style="cursor:default;"><i class="fas fa-file-alt"></i> Currículo</a>
+          <a class="btn-primary" href="#projetos"><i class="fas fa-arrow-right"></i> Ver portfólio</a>
+          <a class="btn-ghost" href="#contato"><i class="fas fa-file-alt"></i> Currículo</a>
         </div>
       </div>
       <div class="hero-avatar">
@@ -559,7 +611,7 @@
     </section>
 
     <!-- SKILLS -->
-    <div class="section-title">
+    <div class="section-title" id="skills">
       <i class="fas fa-cog"></i> Stack profissional
     </div>
     <div class="skills-grid">
@@ -574,7 +626,7 @@
     </div>
 
     <!-- PROJETOS -->
-    <div class="section-title">
+    <div class="section-title" id="projetos">
       <i class="fas fa-folder-open"></i> Projetos em destaque
     </div>
     <div class="projects-grid">
@@ -584,7 +636,7 @@
         <p>Dashboard analítico com visualização de dados em tempo real e integração com APIs externas.</p>
         <span class="project-tag">React</span>
         <span class="project-tag">D3</span>
-        <div><a class="project-link" style="cursor:default;">Ver projeto <i class="fas fa-arrow-right"></i></a></div>
+        <div><a class="project-link" href="#">Ver projeto <i class="fas fa-arrow-right"></i></a></div>
       </div>
       <div class="project-card">
         <div class="project-icon"><i class="fas fa-store"></i></div>
@@ -592,7 +644,7 @@
         <p>E-commerce sustentável com carrinho inteligente, pagamentos e rastreamento de pedidos.</p>
         <span class="project-tag">Next.js</span>
         <span class="project-tag">Stripe</span>
-        <div><a class="project-link" style="cursor:default;">Ver projeto <i class="fas fa-arrow-right"></i></a></div>
+        <div><a class="project-link" href="#">Ver projeto <i class="fas fa-arrow-right"></i></a></div>
       </div>
       <div class="project-card">
         <div class="project-icon"><i class="fas fa-robot"></i></div>
@@ -600,28 +652,50 @@
         <p>Chatbot com NLP para suporte ao cliente, treinado com dados proprietários.</p>
         <span class="project-tag">Python</span>
         <span class="project-tag">TensorFlow</span>
-        <div><a class="project-link" style="cursor:default;">Ver projeto <i class="fas fa-arrow-right"></i></a></div>
+        <div><a class="project-link" href="#">Ver projeto <i class="fas fa-arrow-right"></i></a></div>
       </div>
     </div>
 
     <!-- SOBRE + CONTATO -->
-    <div class="about-wrap">
+    <div class="about-wrap" id="contato">
       <div class="about-text">
         <h2>Mais do que código, <br/>crio <span style="color:#2563eb;">soluções</span>.</h2>
         <p>Sou um engenheiro de software com mais de 6 anos de experiência em arquitetura de microsserviços, front-end performático e liderança técnica. Acredito em design centrado no usuário e em entregas com qualidade desde o primeiro commit.</p>
         <p><i class="fas fa-check-circle" style="color:#2563eb;"></i> 10+ projetos entregues para clientes internacionais</p>
         <p><i class="fas fa-check-circle" style="color:#2563eb;"></i> Especialista em migrações de sistemas legados</p>
+        
+        <!-- BOTÃO DO CURRÍCULO (Google Docs) -->
+        <div style="margin-top: 2rem;">
+          <a href="https://docs.google.com/document/d/1EXJnG5zYvxsuDz9qfw_yJVQrqfZ3hAGzB2uJIOn3oMw/edit?usp=sharing" 
+             target="_blank" 
+             class="btn-curriculo">
+            <i class="fas fa-file-pdf"></i> Acessar currículo completo
+            <i class="fas fa-external-link-alt" style="font-size: 0.85rem;"></i>
+          </a>
+        </div>
       </div>
+      
       <div class="contact-info">
         <h4><i class="fas fa-paper-plane" style="margin-right:10px;"></i>Contato</h4>
         <div class="contact-item"><i class="fas fa-envelope"></i><span>dev.nexus@mail.com</span></div>
         <div class="contact-item"><i class="fas fa-phone-alt"></i><span>+55 (11) 9 9999-8888</span></div>
         <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>São Paulo, Brasil</span></div>
+        
+        <!-- Link do currículo também aqui, de forma mais sutil -->
+        <div class="contact-item" style="margin-top: 0.5rem; border-top: 1px solid #dbe4ee; padding-top: 1rem;">
+          <i class="fas fa-file-alt"></i>
+          <a href="https://docs.google.com/document/d/1EXJnG5zYvxsuDz9qfw_yJVQrqfZ3hAGzB2uJIOn3oMw/edit?usp=sharing" 
+             target="_blank" 
+             style="color: #2563eb; font-weight: 600;">
+            Currículo online <i class="fas fa-arrow-right" style="font-size: 0.8rem;"></i>
+          </a>
+        </div>
+        
         <div class="social-links">
-          <a style="cursor:default;"><i class="fab fa-github"></i></a>
-          <a style="cursor:default;"><i class="fab fa-linkedin-in"></i></a>
-          <a style="cursor:default;"><i class="fab fa-x-twitter"></i></a>
-          <a style="cursor:default;"><i class="fab fa-youtube"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
     </div>
