@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nexus · Portfólio Profissional</title>
+  <!-- Font Awesome para ícones top -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* ----- RESET & BASE ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background: #f8fafc;
+      color: #0b1a2f;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ----- HEADER / NAVBAR ----- */
+    .navbar {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+      padding: 0.75rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+    }
+
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(145deg, #0b1a2f, #1d3b5c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .logo i {
+      -webkit-text-fill-color: #2563eb;
+      margin-right: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1e2f44;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #2563eb;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .btn-outline {
+      border: 1px solid #2563eb;
+      background: transparent;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      color: #2563eb;
+      font-weight: 600;
+      transition: all 0.25s;
+      cursor: default;
+    }
+
+    .btn-outline i {
+      margin-right: 6px;
+    }
+
+    .btn-outline:hover {
+      background: #2563eb;
+      color: white;
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
+    }
+
+    /* ----- HERO ----- */
+    .hero {
+      padding: 4rem 0 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .hero-content {
+      flex: 1 1 400px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1e4a8b;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -1.5px;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #33475b;
+      max-width: 500px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: default;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary i {
+      font-size: 1.1rem;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 28px rgba(37, 99, 235, 0.35);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: #1e2f44;
+      border: 1px solid #d0dae8;
+      padding: 0.75rem 1.8rem;
+      border-radius: 60px;
+      font-weight: 500;
+      transition: 0.2s;
+      cursor: default;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-ghost:hover {
+      border-color: #2563eb;
+      background: #f0f4ff;
+    }
+
+    .hero-avatar {
+      flex: 1 1 300px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .avatar-box {
+      width: 320px;
+      height: 320px;
+      background: linear-gradient(145deg, #eef2f6, #ffffff);
+      border-radius: 38% 62% 41% 59% / 52% 44% 56% 48%;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .avatar-box i {
+      font-size: 10rem;
+      color: #2563eb;
+      opacity: 0.7;
+    }
+
+    /* ----- SEÇÃO SKILLS (cards) ----- */
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin: 3rem 0 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title i {
+      color: #2563eb;
+      font-size: 2rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .skill-card {
+      background: white;
+      padding: 1.8rem 1rem;
+      border-radius: 28px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.02);
+      text-align: center;
+      transition: all 0.25s ease;
+      border: 1px solid rgba(0,0,0,0.01);
+    }
+
+    .skill-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.04);
+      border-color: #dbeafe;
+    }
+
+    .skill-card i {
+      font-size: 2.8rem;
+      color: #2563eb;
+      margin-bottom: 0.7rem;
+    }
+
+    .skill-card span {
+      display: block;
+      font-weight: 600;
+      color: #1e2f44;
+    }
+
+    /* ----- PROJETOS (cards) ----- */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0 3rem;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.02);
+      border: 1px solid #eef2f8;
+      transition: all 0.3s;
+      padding: 1.8rem 1.8rem 2rem;
+      position: relative;
+    }
+
+    .project-card:hover {
+      transform: scale(1.01) translateY(-6px);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.05);
+      border-color: #bdd3ff;
+    }
+
+    .project-icon {
+      background: #eef6ff;
+      width: 60px;
+      height: 60px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-icon i {
+      font-size: 2.2rem;
+      color: #2563eb;
+    }
+
+    .project-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card p {
+      color: #475e77;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-tag {
+      display: inline-block;
+      background: #eef2f8;
+      padding: 0.25rem 1rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1f3a57;
+      margin-right: 6px;
+    }
+
+    .project-link {
+      margin-top: 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #2563eb;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+      cursor: default;
+    }
+
+    .project-link i {
+      font-size: 0.9rem;
+    }
+
+    .project-link:hover {
+      border-bottom-color: #2563eb;
+    }
+
+    /* ----- SOBRE / CONTATO ----- */
+    .about-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      background: white;
+      border-radius: 48px;
+      padding: 3rem 2.5rem;
+      margin: 3rem 0 4rem;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.01);
+      border: 1px solid #eef2f8;
+    }
+
+    .about-text {
+      flex: 2;
+    }
+
+    .about-text h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .about-text p {
+      color: #2b4058;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info {
+      flex: 1;
+      background: #f5f9ff;
+      border-radius: 32px;
+      padding: 2rem 1.8rem;
+    }
+
+    .contact-info h4 {
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-item i {
+      font-size: 1.4rem;
+      color: #2563eb;
+      width: 2rem;
+    }
+
+    .contact-item span {
+      color: #1f3a57;
+      font-weight: 500;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .social-links a {
+      color: #2c3f58;
+      background: white;
+      width: 48px;
+      height: 48px;
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      transition: 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      border: 1px solid #dbe4ee;
+      text-decoration: none;
+      cursor: default;
+    }
+
+    .social-links a:hover {
+      background: #2563eb;
+      color: white;
+      border-color: #2563eb;
+      transform: translateY(-4px);
+    }
+
+    /* ----- FOOTER ----- */
+    .footer {
+      border-top: 1px solid #e2eaf2;
+      padding: 2rem 0;
+      margin-top: 2rem;
+      text-align: center;
+      color: #3b5672;
+      font-size: 0.9rem;
+    }
+
+    .footer i {
+      color: #2563eb;
+    }
+
+    /* ----- RESPONSIVE ----- */
+    @media (max-width: 780px) {
+      .navbar .container {
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+      .nav-links {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+      .avatar-box {
+        width: 220px;
+        height: 220px;
+      }
+      .avatar-box i {
+        font-size: 6rem;
+      }
+      .about-wrap {
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .container {
+        padding: 0 1.2rem;
+      }
+      .btn-primary, .btn-ghost {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">
+        <i class="fas fa-code"></i> nexus.dev
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Projetos</a></li>
+        <li><a href="#">Skills</a></li>
+        <li><a href="#">Contato</a></li>
+        <li><a class="btn-outline" style="cursor:default;"><i class="fas fa-paper-plane"></i> Hire</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-rocket" style="margin-right:6px;"></i> disponível para projetos</div>
+        <h1>Construindo o <span>futuro</span> com código.</h1>
+        <p>Desenvolvedor full-stack com foco em experiências fluidas, design system e arquitetura escalável.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" style="cursor:default;"><i class="fas fa-arrow-right"></i> Ver portfólio</a>
+          <a class="btn-ghost" style="cursor:default;"><i class="fas fa-file-alt"></i> Currículo</a>
+        </div>
+      </div>
+      <div class="hero-avatar">
+        <div class="avatar-box">
+          <i class="fas fa-user-astronaut"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <div class="section-title">
+      <i class="fas fa-cog"></i> Stack profissional
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card"><i class="fab fa-react"></i><span>React</span></div>
+      <div class="skill-card"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+      <div class="skill-card"><i class="fab fa-python"></i><span>Python</span></div>
+      <div class="skill-card"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
+      <div class="skill-card"><i class="fab fa-docker"></i><span>Docker</span></div>
+      <div class="skill-card"><i class="fas fa-cloud"></i><span>AWS</span></div>
+      <div class="skill-card"><i class="fab fa-git-alt"></i><span>Git</span></div>
+      <div class="skill-card"><i class="fas fa-mobile-alt"></i><span>React Native</span></div>
+    </div>
+
+    <!-- PROJETOS -->
+    <div class="section-title">
+      <i class="fas fa-folder-open"></i> Projetos em destaque
+    </div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>InsightFlow</h3>
+        <p>Dashboard analítico com visualização de dados em tempo real e integração com APIs externas.</p>
+        <span class="project-tag">React</span>
+        <span class="project-tag">D3</span>
+        <div><a class="project-link" style="cursor:default;">Ver projeto <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon"><i class="fas fa-store"></i></div>
+        <h3>EcoMarket</h3>
+        <p>E-commerce sustentável com carrinho inteligente, pagamentos e rastreamento de pedidos.</p>
+        <span class="project-tag">Next.js</span>
+        <span class="project-tag">Stripe</span>
+        <div><a class="project-link" style="cursor:default;">Ver projeto <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+      <div class="project-card">
+        <div class="project-icon"><i class="fas fa-robot"></i></div>
+        <h3>Assist.AI</h3>
+        <p>Chatbot com NLP para suporte ao cliente, treinado com dados proprietários.</p>
+        <span class="project-tag">Python</span>
+        <span class="project-tag">TensorFlow</span>
+        <div><a class="project-link" style="cursor:default;">Ver projeto <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+    </div>
+
+    <!-- SOBRE + CONTATO -->
+    <div class="about-wrap">
+      <div class="about-text">
+        <h2>Mais do que código, <br/>crio <span style="color:#2563eb;">soluções</span>.</h2>
+        <p>Sou um engenheiro de software com mais de 6 anos de experiência em arquitetura de microsserviços, front-end performático e liderança técnica. Acredito em design centrado no usuário e em entregas com qualidade desde o primeiro commit.</p>
+        <p><i class="fas fa-check-circle" style="color:#2563eb;"></i> 10+ projetos entregues para clientes internacionais</p>
+        <p><i class="fas fa-check-circle" style="color:#2563eb;"></i> Especialista em migrações de sistemas legados</p>
+      </div>
+      <div class="contact-info">
+        <h4><i class="fas fa-paper-plane" style="margin-right:10px;"></i>Contato</h4>
+        <div class="contact-item"><i class="fas fa-envelope"></i><span>dev.nexus@mail.com</span></div>
+        <div class="contact-item"><i class="fas fa-phone-alt"></i><span>+55 (11) 9 9999-8888</span></div>
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>São Paulo, Brasil</span></div>
+        <div class="social-links">
+          <a style="cursor:default;"><i class="fab fa-github"></i></a>
+          <a style="cursor:default;"><i class="fab fa-linkedin-in"></i></a>
+          <a style="cursor:default;"><i class="fab fa-x-twitter"></i></a>
+          <a style="cursor:default;"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p><i class="fas fa-crown"></i> Nexus.dev — portfólio profissional · 2026</p>
+      <p style="font-size:0.8rem; margin-top:6px; opacity:0.6;">Feito com <i class="fas fa-heart" style="color:#2563eb;"></i> e café</p>
+    </div>
+  </footer>
+</body>
+</html>
